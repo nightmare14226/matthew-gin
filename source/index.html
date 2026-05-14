@@ -1,0 +1,307 @@
+<!DOCTYPE html> <html lang="en"> 
+<!-- Mirrored from exp-gemini.lusion.co/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 05:27:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>GEMINI - A WebGL Car Demo by Lusion</title> <meta name="description" content="Gemini is a Lusion Monthly Experiment. It is visualising one of our interpretations about the contrast of motion and style"> <meta name="robots" content="index,follow"> <meta name="googlebot" content="index,follow"> <meta name="google" content="notranslate"> <link rel="apple-touch-icon" sizes="180x180" href="assets/app/apple-touch-icon.png"> <link rel="icon" type="image/png" sizes="32x32" href="assets/app/favicon-32x32.png"> <link rel="icon" type="image/png" sizes="16x16" href="assets/app/favicon-16x16.png"> <link rel="manifest" href="assets/app/site.webmanifest"> <link rel="shortcut icon" href="favicon.ico"> <meta name="apple-mobile-web-app-capable" content="yes"> <meta name="mobile-web-app-capable" content="yes"> <meta name="msapplication-config" content="assets/app/browserconfig.xml"> <meta name="application-name" content="GEMINI - A WebGL Car Demo by Lusion"> <meta name="msapplication-TileColor" content="#000000"> <meta name="theme-color" content="#000000"> <meta property="og:description" content="Gemini is a Lusion Monthly Experiment. It is visualising one of our interpretations about the contrast of motion and style"> <meta property="og:image:alt" content="GEMINI - A WebGL Car Demo by Lusion"> <meta property="og:image" content="assets/app/share.jpg"> <meta property="og:locale" content="en_US"> <meta property="og:site_name" content="GEMINI - A WebGL Car Demo by Lusion"> <meta property="og:title" content="GEMINI - A WebGL Car Demo by Lusion"> <meta property="og:type" content="website"> <meta property="og:url" content="index.html"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:site" content="@lusionltd"> <meta name="twitter:description" content="Gemini is a Lusion Monthly Experiment. It is visualising one of our interpretations about the contrast of motion and style"> <meta name="twitter:image:alt" content="GEMINI - A WebGL Car Demo by Lusion"> <meta name="twitter:image" content="assets/app/share.jpg"> <meta name="twitter:title" content="GEMINI - A WebGL Car Demo by Lusion"> <meta name="twitter:url" content="index.html"> <script> // disable pinch zoom
+			function preventZoom(e) {
+				e.preventDefault(), (document.body.style.zoom = 1);
+			}
+			window.addEventListener('wheel', (e) => e.preventDefault(), {passive: false});
+			document.addEventListener('gesturestart', (e) => preventZoom(e));
+			document.addEventListener('gesturechange', (e) => preventZoom(e));
+			document.addEventListener('gestureend', (e) => preventZoom(e)); </script> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"> <link rel="stylesheet" href="assets/css/index.css?v=28"> </head> <body> <canvas id="app"></canvas> <div id="ui"> <div id="preloader"> <span id="preloader-logo-title" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;opacity:0"></span> <div id="preloader-logo-wrap" aria-hidden="true"> <span class="preloader-logo-glow"></span> <span class="preloader-logo-orbit"></span> <img class="preloader-logo" src="assets/images/MatthewGinLogo-Silver.png" alt="Matthew Gin"> </div> <div id="preloader-text"><span>...</span> Now Loading <span>.</span><span>.</span><span>.</span></div> <div class="preloader-progress" aria-hidden="true"><div class="preloader-progress-bar"></div></div> <div class="preloader-transition" aria-hidden="true"> <div class="transition-half transition-half--top"></div> <div class="transition-half transition-half--bottom"></div> <div class="transition-flash"></div> <div class="transition-line"></div> <div class="transition-whiteout"></div> </div> </div> <header> <div class="header-logo link"> <div id="header-logo-title" class="logo-title"> <div class="logo-title--lab"> <img src="assets/images/MatthewGinLogo-Silver.png" alt="Matthew Gin" class="logo-title--img"> </div> <span class="logo-sparks" aria-hidden="true"> <span class="spark-orbit so-1"><span class="spark"></span></span> <span class="spark-orbit so-2"><span class="spark"></span></span> <span class="spark-orbit so-3"><span class="spark"></span></span> <span class="spark-orbit so-4"><span class="spark"></span></span> <span class="spark-orbit so-5"><span class="spark"></span></span> <span class="spark-orbit so-6"><span class="spark"></span></span> </span> </div> </div> <div class="header-more"> <div class="header-more--projects link"> <h2>Projects</h2> </div> <div class="header-more--about link"> <h2>About</h2> </div> <div class="header-more--audio"> <div id="audio-btn" class="control__content link"> <div class="audio__bar"></div> <div class="audio__bar"></div> <div class="audio__bar"></div> <div class="audio__bar"></div> </div> </div> </div> </header> <div id="experience"> <div class="stage-nav-btn is-scene-0 link" data-id="0"> <div class="stage-nav-btn-text-wrapper"> <div class="stage-nav-btn-line"></div> <div class="stage-nav-btn-text">In Motion</div> </div> </div> <div class="stage-nav-btn is-scene-1 link" data-id="1"> <div class="stage-nav-btn-text-wrapper"> <div class="stage-nav-btn-text">In Style</div> <div class="stage-nav-btn-line"></div> </div> </div> <div class="hold-interaction"> <div class="hold-interaction--circles"> <svg class="holdInnerCircle" width="70" height="70" viewbox="0 0 70 70"> <circle class="hold__innerCicle" cx="35" cy="35" r="1.65663" fill="white" stroke-width="2"/> </svg> <svg class="holdOuterCircle" width="70" height="70" viewbox="0 0 70 70"> <path class="hold__outerCircle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"/> <path class="hold__outerCirclePath" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1"/> </svg> </div> <span class="hold-interaction--text">Hold</span> </div> </div> <div id="cinematic"> <div id="cinematic-bar-top" class="cinematic-bar"> <div class="cinematic-bar-gradient"></div> </div> <div id="cinematic-header"> <p class="cinematic-copy">Res</p> <p class="cinematic-copy">Trans > View On</p> <div id="cinematic-header-headline"> <h2>In slow movement view</h2> <div id="cinematic-header-icon"> <div></div> </div> </div> </div> <div id="cinematic-grid"> <div class="grid-line line-1 data-lines-and-bars"></div> <div class="grid-line line-2 data-lines-and-bars"></div> </div> <div id="cinematic-footer"> <div id="cinematic-footer-data"> <ul id="cinematic-footer-data-top"> <li id="data-top-bgBanner" class="data-lines-and-bars"></li> <li> <p class="cinematic-copy">Gemini</p> </li> <li> <p class="cinematic-copy">Formula</p> <p class="cinematic-copy">Speed</p> </li> <li> <p class="cinematic-copy">Rec</p> <p class="cinematic-copy">En</p> </li> <li> <p id="cinematic-time" class="cinematic-copy alignToBottom">22.11</p> </li> </ul> <div id="cinematic-footer-data-bottom"> <p class="cinematic-copy">Gem</p> <div id="data-bottom-line" class="data-lines-and-bars"> <div id="data-bottom-line-a"></div> <div id="data-bottom-line-b"></div> </div> <p class="cinematic-copy">Ini</p> <p class="cinematic-copy">A</p> <p class="cinematic-copy">On</p> </div> </div> <div id="cinematic-footer-line" class="data-lines-and-bars"> <div id="cinematic-footer-line-a"></div> <div id="cinematic-footer-line-b"></div> <div id="cinematic-footer-line-c"></div> </div> <div id="cinematic-footer-pointerData" class="data-lines-and-bars"> <p class="cinematic-copy">C</p> <p class="cinematic-copy">46.9897752</p> <p class="cinematic-copy">33.2873600</p> </div> <p id="cinematic-footer-title" class="cinematic-copy">Lusion</p> </div> <div id="cinematic-bar-bottom" class="cinematic-bar"> <div class="cinematic-bar-gradient"></div> </div> </div> <div id="about"> <div id="about-exit"> <div id="about-exit--close-btn" class="has-rollover-audio"> <div class="bar"></div> <div class="bar"></div> <svg class="polygon" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"> <path opacity="0.8" d="M21.9068 1H13.0932L5.40683 5.40683L1 13.0932V21.9068L5.40683 29.5932L13.0932 34H21.9068L29.5932 29.5932L34 21.9068V13.0932L29.5932 5.40683L21.9068 1Z" stroke="#959292" stroke-miterlimit="10"/> </svg> </div> </div> <div id="about-content-title"> <span class="about-logo-wrap"> <span class="about-logo-glow" aria-hidden="true"></span> <img class="about-logo" src="assets/images/MatthewGinLogo-Silver.png" alt="Matthew Gin"> </span> <h1 split-by="word" letter-animation="fadeIn" class="about-title about-role"> Lead Data Engineer </h1> <p split-by="word" letter-animation="fadeIn"> Lead Data Engineer with a decade of experience architecting petabyte-scale platforms for analytics, machine learning, and operational decisions. Builds real-time streaming systems, cloud-native lakehouses, and orchestration layers that turn raw signal into trusted data products with measurable impact. </p> <div class="about-skills" aria-label="Core engineering skills"> <span class="skill-chip" title="Python"><img src="https://cdn.simpleicons.org/python" alt="Python" loading="lazy"></span> <span class="skill-chip" title="Java"><img src="https://cdn.simpleicons.org/openjdk" alt="Java" loading="lazy"></span> <span class="skill-chip" title="Go"><img src="https://cdn.simpleicons.org/go" alt="Go" loading="lazy"></span> <span class="skill-chip" title="R"><img src="https://cdn.simpleicons.org/r" alt="R" loading="lazy"></span> <span class="skill-chip" title="Spring Boot"><img src="https://cdn.simpleicons.org/springboot" alt="Spring Boot" loading="lazy"></span> <span class="skill-chip" title="PostgreSQL"><img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" loading="lazy"></span> <span class="skill-chip" title="MySQL"><img src="https://cdn.simpleicons.org/mysql" alt="MySQL" loading="lazy"></span> <span class="skill-chip" title="Snowflake"><img src="https://cdn.simpleicons.org/snowflake" alt="Snowflake" loading="lazy"></span> <span class="skill-chip" title="Apache Kafka"><img src="https://cdn.simpleicons.org/apachekafka" alt="Apache Kafka" loading="lazy"></span> <span class="skill-chip" title="Apache Spark"><img src="https://cdn.simpleicons.org/apachespark" alt="Apache Spark" loading="lazy"></span> <span class="skill-chip" title="Apache Airflow"><img src="https://cdn.simpleicons.org/apacheairflow" alt="Apache Airflow" loading="lazy"></span> <span class="skill-chip" title="Amazon Web Services"><img src="https://api.iconify.design/logos/aws.svg" alt="AWS" loading="lazy"></span> <span class="skill-chip" title="Microsoft Azure"><img src="https://api.iconify.design/logos/microsoft-azure.svg" alt="Azure" loading="lazy"></span> <span class="skill-chip" title="Google Cloud"><img src="https://cdn.simpleicons.org/googlecloud" alt="Google Cloud" loading="lazy"></span> <span class="skill-chip" title="Docker"><img src="https://cdn.simpleicons.org/docker" alt="Docker" loading="lazy"></span> <span class="skill-chip" title="Kubernetes"><img src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes" loading="lazy"></span> </div> </div> <div id="about-content-description"> <div id="about-left-column"> <a class="btn explore-btn has-rollover-audio" href="mailto:matthew.gin@hustlexp.app" rel="noopener"> <span class="explore-btn--text" split-by="letter" letter-animation="fadeIn">Get in touch</span> <svg class="explore-btn--arrow" width="32" height="6" viewBox="0 0 32 6" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M0 3H30.5M30.5 3C29.537 2.75 27.6111 1.8 27.6111 0M30.5 3C29.537 3.25 27.6111 4.2 27.6111 6" stroke="white" stroke-width="0.5"/> </svg> </a> </div> </div> </div> <div id="projects"> <div id="projects-exit"> <div id="projects-exit--close-btn" class="has-rollover-audio"> <div class="bar"></div> <div class="bar"></div> <svg class="polygon" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"> <path opacity="0.8" d="M21.9068 1H13.0932L5.40683 5.40683L1 13.0932V21.9068L5.40683 29.5932L13.0932 34H21.9068L29.5932 29.5932L34 21.9068V13.0932L29.5932 5.40683L21.9068 1Z" stroke="#959292" stroke-miterlimit="10"/> </svg> </div> </div> <div id="projects-content-title"> <h2 class="projects-title">Projects</h2> <p class="projects-subtitle">A selection of data engineering work &mdash; pipelines, platforms, and the systems behind them.</p> </div> <div id="projects-slider"> <button type="button" class="slider-arrow slider-prev" aria-label="Previous project"> <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg> </button> <div class="slider-stage"> <article class="slide is-active" data-slide="0"> <div class="slide-card"> <div class="slide-card--image"><span class="slide-card--placeholder">01</span></div> <div class="slide-card--caption"> <h2 class="slide-card--title">Real-Time Ingestion Platform</h2> </div> </div> <div class="slide-detail"> <h2 class="slide-detail--title">Real-Time Ingestion Platform</h2> <p class="slide-detail--blurb">Engineered a streaming ingestion platform processing 2.5B events daily across distributed Kafka and Flink clusters, with exactly-once semantics and schema-evolution guarantees. Reduced end-to-end pipeline latency from 14 minutes to under 800 milliseconds while cutting infrastructure spend by 38%. The system now underpins analytics, feature stores, and operational dashboards across the organization.</p> <div class="slide-detail--actions"> <button type="button" class="slide-detail--back slide-action-btn" aria-label="Back to projects"> <span class="slide-action-btn--icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg></span> <span class="slide-action-btn--label">Back</span> </button> <a class="slide-detail--view slide-action-btn slide-action-btn--primary" href="#" aria-label="View project"> <span class="slide-action-btn--label">View</span> <span class="slide-action-btn--icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span> </a> </div> </div> </article> <article class="slide" data-slide="1"> <div class="slide-card"> <div class="slide-card--image"><span class="slide-card--placeholder">02</span></div> <div class="slide-card--caption"> <h2 class="slide-card--title">Unified Data Lakehouse</h2> </div> </div> <div class="slide-detail"> <h2 class="slide-detail--title">Unified Data Lakehouse</h2> <p class="slide-detail--blurb">Designed and shipped a governed lakehouse on Apache Iceberg and Trino, consolidating 47 disparate sources into a single analytical surface. Implemented column-level lineage, fine-grained access controls, and automated data-quality monitoring that surfaced more than 200 upstream defects in the first quarter. The platform powers self-serve analytics for 400+ stakeholders and sustains sub-second queries across petabyte-scale datasets.</p> <div class="slide-detail--actions"> <button type="button" class="slide-detail--back slide-action-btn" aria-label="Back to projects"> <span class="slide-action-btn--icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg></span> <span class="slide-action-btn--label">Back</span> </button> <a class="slide-detail--view slide-action-btn slide-action-btn--primary" href="#" aria-label="View project"> <span class="slide-action-btn--label">View</span> <span class="slide-action-btn--icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span> </a> </div> </div> </article> <article class="slide" data-slide="2"> <div class="slide-card"> <div class="slide-card--image"><span class="slide-card--placeholder">03</span></div> <div class="slide-card--caption"> <h2 class="slide-card--title">ML Feature Platform</h2> </div> </div> <div class="slide-detail"> <h2 class="slide-detail--title">ML Feature Platform</h2> <p class="slide-detail--blurb">Architected an end-to-end feature platform delivering 1,200+ ML features to production with point-in-time correctness and sub-50ms online serving. Migrated legacy batch jobs to streaming on Dataflow and Beam, eliminating training-serving skew and cutting model staleness from days to minutes. The system now underpins fraud detection, personalization, and forecasting models across multiple business lines.</p> <div class="slide-detail--actions"> <button type="button" class="slide-detail--back slide-action-btn" aria-label="Back to projects"> <span class="slide-action-btn--icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg></span> <span class="slide-action-btn--label">Back</span> </button> <a class="slide-detail--view slide-action-btn slide-action-btn--primary" href="#" aria-label="View project"> <span class="slide-action-btn--label">View</span> <span class="slide-action-btn--icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span> </a> </div> </div> </article> </div> <button type="button" class="slider-arrow slider-next" aria-label="Next project"> <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg> </button> <div class="slider-dots"> <button type="button" class="slider-dot is-active" data-slide="0" aria-label="Go to slide 1"></button> <button type="button" class="slider-dot" data-slide="1" aria-label="Go to slide 2"></button> <button type="button" class="slider-dot" data-slide="2" aria-label="Go to slide 3"></button> </div> </div> </div> <footer> <div id="floating-socials"> <a href="mailto:matthew.gin@hustlexp.app" class="floating-social link" rel="noopener" aria-label="Email"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" stroke="#fff" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"> <rect x="1.75" y="3.5" width="12.5" height="9" rx="1.25"/> <path d="m2.25 4.5 5.75 4.25L13.75 4.5"/> </svg> </a> <a href="https://www.linkedin.com/in/matthew-gin-b04578407/" class="floating-social link" target="_blank" rel="noopener" aria-label="LinkedIn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"> <path fill="#fff" d="M13.68 1.333H2.318a.972.972 0 0 0-.984.961v11.41c0 .53.44.963.984.963H13.68c.545 0 .987-.433.987-.961V2.294a.974.974 0 0 0-.987-.96ZM5.29 12.695H3.31V6.331h1.98v6.364ZM4.3 5.463a1.146 1.146 0 1 1-.004-2.292A1.146 1.146 0 0 1 4.3 5.463Zm8.396 7.232h-1.977V9.601c0-.736-.013-1.687-1.028-1.687-1.029 0-1.185.805-1.185 1.635v3.146H6.532V6.331h1.896v.87h.026c.263-.5.909-1.03 1.87-1.03 2.002 0 2.372 1.319 2.372 3.032v3.492Z"/> </svg> </a> <a href="https://wa.me/13393991206" class="floating-social link" target="_blank" rel="noopener" aria-label="WhatsApp"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"> <path fill="#fff" d="M11.46 9.55c-.2-.1-1.18-.58-1.36-.65-.18-.07-.32-.1-.45.1-.13.2-.51.65-.63.78-.12.13-.23.15-.43.05-.2-.1-.85-.31-1.62-1-.6-.53-1-1.19-1.12-1.39-.12-.2-.01-.31.09-.41.09-.09.2-.23.3-.35.1-.12.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.33-.34-.45-.34-.12-.01-.25-.01-.39-.01-.13 0-.35.05-.53.25-.18.2-.7.69-.7 1.67 0 .99.72 1.94.82 2.07.1.13 1.41 2.15 3.41 3.02.48.21.85.33 1.14.42.48.15.91.13 1.26.08.38-.06 1.18-.48 1.34-.95.17-.46.17-.86.12-.95-.05-.08-.18-.13-.38-.23ZM8.04 14.5h-.01c-1.16 0-2.3-.32-3.31-.92l-.24-.14-2.46.65.66-2.4-.15-.25a6.65 6.65 0 0 1-1.02-3.55c0-3.68 3-6.68 6.68-6.68 1.79 0 3.47.7 4.74 1.96 1.27 1.27 1.96 2.95 1.96 4.74-.01 3.68-3.01 6.68-6.68 6.68Zm5.69-12.36A8.01 8.01 0 0 0 8.04 0a8.04 8.04 0 0 0-7.04 11.85L0 16l4.27-1.12a8 8 0 0 0 3.78 1h.01a8.04 8.04 0 0 0 5.67-13.74Z"/> </svg> </a> <a href="https://t.me/matthewgin" class="floating-social link" target="_blank" rel="noopener" aria-label="Telegram"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"> <path fill="#fff" d="M14.93 1.81 1.55 7.13c-.85.34-.84.82-.16 1.03l3.44 1.07L12.79 4c.38-.23.72-.11.44.15l-6.45 5.82-.25 3.74c.33 0 .47-.15.65-.33l1.57-1.53 3.27 2.42c.6.33 1.03.16 1.18-.56l2.14-10.1c.22-.88-.34-1.28-.94-1.02z"/> </svg> </a> </div> <div id="themes-selector" class="link"></div> </footer> </div> <script src="assets/js/gsap.min.js"></script> <script src="assets/js/index.js"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FTR8BSEYX"></script> <script> window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'G-6FTR8BSEYX'); </script> <script>
+			(function () {
+				try {
+					var preloader = document.getElementById('preloader');
+					if (!preloader) return;
+
+					var MIN_DISPLAY_TIME = 4000;
+					var TRANSITION_DURATION = 3050;
+					var loadStart = Date.now();
+					var triggered = false;
+					var neutralized = false;
+					var watchTickInterval = null;
+
+					function killGsap(el) {
+						if (!window.gsap || !el) return;
+						try { window.gsap.killTweensOf(el); } catch (e) {}
+					}
+
+					// Freeze the preloader so gemini's GSAP fade + container.remove() can't dismiss it
+					// before our cinematic transition has a chance to play.
+					function neutralizeGemini() {
+						if (neutralized || !document.body.contains(preloader)) return;
+						neutralized = true;
+						preloader.remove = function () {};
+						killGsap(preloader);
+						var kids = preloader.querySelectorAll('*');
+						for (var i = 0; i < kids.length; i++) killGsap(kids[i]);
+						preloader.style.removeProperty('transform');
+						// Clear gemini's GSAP inline styles on the text so it stays put + visible
+						var txt = document.getElementById('preloader-text');
+						if (txt) {
+							txt.style.removeProperty('transform');
+							txt.style.removeProperty('opacity');
+							txt.style.removeProperty('x');
+						}
+					}
+
+					function runTransition() {
+						if (triggered || !document.body.contains(preloader)) return;
+						triggered = true;
+						// Belt-and-suspenders kill in case gemini scheduled new tweens since neutralize
+						killGsap(preloader);
+						var kids = preloader.querySelectorAll('*');
+						for (var i = 0; i < kids.length; i++) killGsap(kids[i]);
+						requestAnimationFrame(function () {
+							preloader.classList.add('is-leaving');
+							setTimeout(function () {
+								preloader.classList.add('preloader-hidden');
+							}, TRANSITION_DURATION);
+						});
+					}
+
+					function maybeTrigger() {
+						var wait = Math.max(0, MIN_DISPLAY_TIME - (Date.now() - loadStart));
+						setTimeout(runTransition, wait);
+					}
+
+					// Gemini adds html.is-ready when its _targetPercent hits 1 and synchronously calls hide().
+					// We hook that signal, neutralize gemini's fade, then run our transition after MIN_DISPLAY_TIME.
+					var htmlObserver = new MutationObserver(function () {
+						if (document.documentElement.classList.contains('is-ready')) {
+							htmlObserver.disconnect();
+							neutralizeGemini();
+							maybeTrigger();
+						}
+					});
+					htmlObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+					// Backup polling in case the mutation observer is starved
+					watchTickInterval = setInterval(function () {
+						if (neutralized || triggered) { clearInterval(watchTickInterval); return; }
+						if (document.documentElement.classList.contains('is-ready')) {
+							clearInterval(watchTickInterval);
+							htmlObserver.disconnect();
+							neutralizeGemini();
+							maybeTrigger();
+						}
+					}, 80);
+
+					// Fallback for SKIP_ANIMATION / failed loads — still trigger after window.load + min time
+					window.addEventListener('load', function () {
+						setTimeout(function () {
+							if (!triggered) {
+								if (watchTickInterval) clearInterval(watchTickInterval);
+								htmlObserver.disconnect();
+								neutralizeGemini();
+								maybeTrigger();
+							}
+						}, MIN_DISPLAY_TIME);
+					});
+
+					// Hard fallback so the preloader can never hang the page
+					setTimeout(function () {
+						if (!triggered) {
+							if (watchTickInterval) clearInterval(watchTickInterval);
+							htmlObserver.disconnect();
+							neutralizeGemini();
+							runTransition();
+						}
+					}, 18000);
+				} catch (e) {}
+			})();
+		</script> <script>
+			(function () {
+				// ── About-panel diagnostics ──
+				// Logs computed text-shadow/filter/background and bounding rects for the title,
+				// the logo halo, and the summary — fires the first time the About panel becomes visible.
+				var aboutPanel = document.getElementById('about');
+				if (aboutPanel) {
+					var aboutLogged = false;
+					var P2 = '[about-debug]';
+					function logAbout(label, val) { try { console.log(P2, label, val); } catch(e){} }
+					function dumpAbout() {
+						if (aboutLogged) return;
+						var title  = aboutPanel.querySelector('.about-role');
+						var glow   = aboutPanel.querySelector('.about-logo-glow');
+						var wrap   = aboutPanel.querySelector('.about-logo-wrap');
+						var summary = aboutPanel.querySelector('p');
+						if (!title || !summary) return;
+						aboutLogged = true;
+						var cs;
+						if (title) {
+							cs = getComputedStyle(title);
+							logAbout('title text-shadow:', cs.textShadow);
+							logAbout('title filter:', cs.filter);
+							logAbout('title computed bg:', cs.background.substring(0, 80));
+							logAbout('title bounding rect:', title.getBoundingClientRect());
+						}
+						var titleSpan = title && title.querySelector('span');
+						if (titleSpan) {
+							cs = getComputedStyle(titleSpan);
+							logAbout('title SPAN filter:', cs.filter);
+							logAbout('title SPAN animation:', cs.animation);
+							logAbout('title SPAN bg:', cs.background.substring(0, 80));
+						}
+						if (glow) {
+							cs = getComputedStyle(glow);
+							logAbout('logo-glow rect:', glow.getBoundingClientRect());
+							logAbout('logo-glow width/height computed:', cs.width, cs.height);
+							logAbout('logo-glow filter:', cs.filter);
+						}
+						if (wrap) {
+							logAbout('logo-wrap rect:', wrap.getBoundingClientRect());
+						}
+						if (summary) {
+							cs = getComputedStyle(summary);
+							logAbout('summary text-shadow:', cs.textShadow);
+							logAbout('summary animation:', cs.animation);
+							logAbout('summary bounding rect:', summary.getBoundingClientRect());
+						}
+						// Check overlap between logo-glow and title rect to confirm/deny the bleed hypothesis
+						if (glow && title) {
+							var g = glow.getBoundingClientRect();
+							var t = title.getBoundingClientRect();
+							var overlapY = !(g.bottom < t.top || g.top > t.bottom);
+							logAbout('logo-glow OVERLAPS title rect?', overlapY, '(glow.bottom=' + g.bottom + ', title.top=' + t.top + ')');
+						}
+					}
+					var aboutObs = new MutationObserver(function () {
+						if (aboutPanel.classList.contains('is-open') ||
+							getComputedStyle(aboutPanel).display !== 'none') {
+							setTimeout(dumpAbout, 200);
+						}
+					});
+					aboutObs.observe(aboutPanel, { attributes: true, attributeFilter: ['class', 'style'] });
+					// Also dump on first idle, in case the panel is already shown (testing)
+					setTimeout(function () {
+						if (getComputedStyle(aboutPanel).display !== 'none') dumpAbout();
+					}, 5000);
+				}
+			})();
+
+			(function () {
+				var openBtn = document.querySelector('.header-more--projects');
+				var panel = document.getElementById('projects');
+				var closeBtn = document.getElementById('projects-exit--close-btn');
+				if (!openBtn || !panel || !closeBtn) return;
+
+				var slider = document.getElementById('projects-slider');
+				var slides = slider ? slider.querySelectorAll('.slide') : [];
+				var dots = slider ? slider.querySelectorAll('.slider-dot') : [];
+				var prevBtn = slider ? slider.querySelector('.slider-prev') : null;
+				var nextBtn = slider ? slider.querySelector('.slider-next') : null;
+				var current = 0;
+				var timer = null;
+				var AUTOPLAY_MS = 6000;
+
+				function splitChars(el) {
+					if (!el || el.dataset.split === 'true') return;
+					var text = el.textContent.trim();
+					el.textContent = '';
+					var words = text.split(/\s+/);
+					var idx = 0;
+					for (var w = 0; w < words.length; w++) {
+						var word = words[w];
+						if (!word) continue;
+						var wordSpan = document.createElement('span');
+						wordSpan.className = 'word';
+						for (var c = 0; c < word.length; c++) {
+							var charSpan = document.createElement('span');
+							charSpan.className = 'char';
+							charSpan.textContent = word.charAt(c);
+							charSpan.style.setProperty('--i', idx++);
+							wordSpan.appendChild(charSpan);
+						}
+						el.appendChild(wordSpan);
+						if (w < words.length - 1) {
+							el.appendChild(document.createTextNode(' '));
+						}
+					}
+					el.dataset.split = 'true';
+				}
+				function prepareSlide(slide) {
+					splitChars(slide.querySelector('.slide-detail--title'));
+					splitChars(slide.querySelector('.slide-detail--blurb'));
+				}
+				for (var p = 0; p < slides.length; p++) prepareSlide(slides[p]);
+
+				function setSlide(idx, opts) {
+					if (!slides.length) return;
+					idx = ((idx % slides.length) + slides.length) % slides.length;
+					for (var i = 0; i < slides.length; i++) {
+						slides[i].classList.toggle('is-active', i === idx);
+						slides[i].classList.remove('is-expanded');
+					}
+					for (var j = 0; j < dots.length; j++) {
+						dots[j].classList.toggle('is-active', j === idx);
+					}
+					current = idx;
+					if (!opts || opts.resetTimer !== false) restartAutoplay();
+				}
+				function nextSlide() { setSlide(current + 1); }
+				function prevSlide() { setSlide(current - 1); }
+				function startAutoplay() {
+					stopAutoplay();
+					timer = setInterval(nextSlide, AUTOPLAY_MS);
+				}
+				function stopAutoplay() {
+					if (timer) { clearInterval(timer); timer = null; }
+				}
+				function restartAutoplay() {
+					if (panel.classList.contains('is-open') && !isAnyExpanded()) startAutoplay();
+				}
+				function isAnyExpanded() {
+					for (var i = 0; i < slides.length; i++) {
+						if (slides[i].classList.contains('is-expanded')) return true;
+					}
+					return false;
+				}
+
+				if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+				if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+				for (var d = 0; d < dots.length; d++) {
+					(function (i) { dots[i].addEventListener('click', function () { setSlide(i); }); })(d);
+				}
+
+				for (var s = 0; s < slides.length; s++) {
+					(function (slide) {
+						var card = slide.querySelector('.slide-card');
+						var back = slide.querySelector('.slide-detail--back');
+						if (card) card.addEventListener('click', function () {
+							slide.classList.add('is-expanded');
+							stopAutoplay();
+						});
+						if (back) back.addEventListener('click', function (e) {
+							e.stopPropagation();
+							slide.classList.remove('is-expanded');
+							restartAutoplay();
+						});
+					})(slides[s]);
+				}
+
+				openBtn.addEventListener('click', function () {
+					panel.classList.add('is-open');
+					setSlide(0, { resetTimer: false });
+					startAutoplay();
+				});
+				closeBtn.addEventListener('click', function () {
+					if (panel.classList.contains('is-closing')) return;
+					panel.classList.add('is-closing');
+					stopAutoplay();
+					for (var i = 0; i < slides.length; i++) slides[i].classList.remove('is-expanded');
+					setTimeout(function () {
+						panel.classList.remove('is-open');
+						panel.classList.remove('is-closing');
+					}, 500);
+				});
+			})();
+		</script> </body>
+<!-- Mirrored from exp-gemini.lusion.co/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 May 2026 05:27:45 GMT -->
+</html> 
